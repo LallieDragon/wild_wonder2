@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { MDBBtn, MDBIcon } from 'mdbreact';
 
 import InfoSection from '../components/InfoSection';
 import Spinner from '../components/Spinner';
 import TuitionTable from '../components/TuitionTable';
 import { initClient } from '../contentful/contentfulClient';
+import registration from '../files/WWPRegistration.pdf'
 
 class RegistrationContainer extends Component {
   constructor(props) {
@@ -65,6 +67,10 @@ class RegistrationContainer extends Component {
           <InfoSection content={this.state.applicationContent} />
           <TuitionTable content={this.state.tuition} />
           <InfoSection content={this.state.enrollmentContent} />
+          <p className="brown-text mt-3">Download Application for Enrollment</p>
+          <a href={registration} download className="text-center">
+            <MDBBtn rounded size="lg" color="info" style={{ marginBottom: "2rem"}}><MDBIcon size="3x" icon="file-download" className="ml-2" /></MDBBtn>
+          </a>
         </div>
       )
     }

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
 "mdbreact";
-// import '../styles/carousel.css';
+
 import imageQuality from '../contentful/imageHandling';
 
 class Carousel extends Component {
   render() {
     let images = this.props.content.carouselMedia.map((media, index) =>
-      <MDBCarouselItem itemId={index} key={media.fields.title}>
+      <MDBCarouselItem itemId={index + 1} key={media.fields.file.url}>
         <MDBView>
           <img
             className="d-block w-100"
@@ -28,7 +28,7 @@ class Carousel extends Component {
           showIndicators={true}
           className="z-depth-1"
         >
-          <MDBCarouselInner>
+          <MDBCarouselInner className="mb-3">
             { images }
           </MDBCarouselInner>
         </MDBCarousel>
