@@ -67,7 +67,7 @@ class RegistrationContainer extends Component {
           <InfoSection content={this.state.applicationContent} />
           <TuitionTable content={this.state.tuition} />
           <InfoSection content={this.state.enrollmentContent} />
-          <p className="brown-text mt-3">Download Application for Enrollment</p>
+          <p className="brown-text mt-3 h4">Download Application for Enrollment</p>
           <a href={registration} download className="text-center">
             <MDBBtn rounded size="lg" color="info" style={{ marginBottom: "2rem"}}><MDBIcon size="3x" icon="file-download" className="ml-2" /></MDBBtn>
           </a>
