@@ -11,7 +11,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router className="App">
+    <Router basename={process.env.PUBLIC_URL} className="App">
       <NavbarContainer />
       <Routes />
     </Router>

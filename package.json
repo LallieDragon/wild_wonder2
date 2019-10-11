@@ -2,6 +2,7 @@
   "name": "wild_wonder",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wildwonderprogram.com",
   "dependencies": {
     "contentful": "^7.10.0",
     "mdbreact": "^4.20.0",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "gh-pages": "^2.1.1"
   }
 }
