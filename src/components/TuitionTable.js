@@ -3,20 +3,21 @@ import { MDBTable, MDBTableBody } from 'mdbreact';
 
 const TuitionTable = (props) => {
 
+  console.log("TESTING + " + props.content.list.diaperTuition)
   return (
     <MDBTable>
       <MDBTableBody>
         <tr className="brown-text">
-          <td className="mr-3">{props.content.title1}</td>
-          <td className="mr-3">{props.content.list.Tuition}</td>
+          <td className="mr-3">Full-Time Tuition for children in diapers: </td>
+          <td className="mr-3">{props.content.list.diaperTuition}</td>
+        </tr>
+        <tr className="brown-text">
+          <td className="mr-3">Full-Time Tuition for children who are diaper-free:</td>
+          <td className="mr-3">{props.content.list.freedomTuition}</td>
         </tr>
         <tr className="brown-text">
           <td className="mr-3">Supplies & Materials Fee</td>
-          <td className="mr-3">{props.content.list.Supplies}</td>
-        </tr>
-        <tr className="brown-text">
-          <td className="mr-3">Application fee</td>
-          <td className="mr-3">{props.content.list.Application}</td>
+          <td className="mr-3">{props.content.list.supplies}</td>
         </tr>
       </MDBTableBody>
     </MDBTable>
