@@ -76,7 +76,6 @@ class ProgramContainer extends Component {
       this.getPhilosophyListsContent();
       return <Spinner />
     } else {
-      console.log(this.state)
       return (
         <div className="container">
           <InfoSection content={this.state.programContent} />

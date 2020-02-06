@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import InfoSection from '../components/InfoSection';
 import Spinner from '../components/Spinner';
-import List from '../components/List';
+// import List from '../components/List';
 import Carousel from '../components/Carousel';
 import { initClient } from '../contentful/contentfulClient';
 
@@ -11,14 +11,13 @@ class ProgramContainer extends Component {
     super(props)
     this.state = {
       rhythmContent: null,
-      rhythmListContent: null,
       classroomContent: null,
       carouselMedia: null
     }
     this.getRhythmContent = this.getRhythmContent.bind(this);
     this.getClassroomContent = this.getClassroomContent.bind(this);
     this.getCarouselMedia = this.getCarouselMedia.bind(this);
-    this.getRhythmListContent = this.getRhythmListContent.bind(this);
+    // this.getRhythmListContent = this.getRhythmListContent.bind(this);
   }
 
   getRhythmContent = () => {
@@ -51,18 +50,17 @@ class ProgramContainer extends Component {
     .catch('Error: ' + console.error)
   }
 
-  getRhythmListContent = () => {
-    let client = initClient()
-
-    client.getEntry('1FGv8GcVxwjiE3JTVsFkS4')
-    .then((entry) => this.setState({
-      rhythmListContent: entry.fields
-     }))
-    .catch('Error: ' + console.error)
-  }
+  // getRhythmListContent = () => {
+  //   let client = initClient()
+  //
+  //   client.getEntry('1FGv8GcVxwjiE3JTVsFkS4')
+  //   .then((entry) => this.setState({
+  //     rhythmListContent: entry.fields
+  //    }))
+  //   .catch('Error: ' + console.error)
+  // }
 
   render() {
-    console.log(this.state)
     if (this.state.rhythmContent === null) {
       this.getRhythmContent();
       return <Spinner />
@@ -72,15 +70,16 @@ class ProgramContainer extends Component {
     } else if (this.state.carouselMedia === null) {
       this.getCarouselMedia();
       return <Spinner />
-    } else if (this.state.rhythmListContent === null) {
-      this.getRhythmListContent();
-      return <Spinner />
-    } else {
-      console.log(this.state.rhythmListContent.list)
+    }
+    // else if (this.state.rhythmListContent === null) {
+    //   this.getRhythmListContent();
+    //   return <Spinner />
+    // }
+    else {
+      // console.log(this.state)
       return (
         <div className="container">
           <InfoSection content={this.state.rhythmContent} />
-          <List title={this.state.rhythmListContent.title1} list={this.state.rhythmListContent.list.daily} />
           <InfoSection content={this.state.classroomContent} />
           <Carousel content={this.state.carouselMedia} />
         </div>
@@ -88,5 +87,8 @@ class ProgramContainer extends Component {
     }
   }
 }
+
+//<List title={this.state.rhythmListContent.title1} list={this.state.rhythmListContent.list.daily} />
+
 
 export default ProgramContainer;
