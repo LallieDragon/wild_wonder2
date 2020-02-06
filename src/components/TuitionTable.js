@@ -2,8 +2,6 @@ import React from 'react';
 import { MDBTable, MDBTableBody } from 'mdbreact';
 
 const TuitionTable = (props) => {
-
-  console.log("TESTING + " + props.content.list.diaperTuition)
   return (
     <MDBTable>
       <MDBTableBody>

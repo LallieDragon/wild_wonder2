@@ -18,7 +18,6 @@ class Carousel extends Component {
       </MDBCarouselItem>
   )
 
-    console.log(this.props.content.carouselMedia)
     return (
       <MDBContainer className="carousel-container">
         <MDBCarousel

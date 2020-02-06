@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import NavbarContainer from './containers/NavbarContainer.js';
 import Routes from './Routes.js';
@@ -11,10 +11,10 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL} className="App">
+    <HashRouter basename={"/"} className="App">
       <NavbarContainer />
       <Routes />
-    </Router>
+    </HashRouter>
   );
 }
 

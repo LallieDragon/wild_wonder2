@@ -61,16 +61,17 @@ class RegistrationContainer extends Component {
       this.getTuitionContent();
       return <Spinner />
     } else {
-      console.log(this.state)
       return (
         <div className="container">
           <InfoSection content={this.state.applicationContent} />
           <TuitionTable content={this.state.tuition} />
           <InfoSection content={this.state.enrollmentContent} />
-          <p style={{paddingLeft: "15px"}} className="brown-text mt-3 h4">Download Application for Enrollment</p>
-          <a href={registration} style={{paddingLeft: "15px"}} download className="text-center">
-            <MDBBtn rounded size="lg" color="info" style={{ marginBottom: "2rem"}}><MDBIcon size="3x" icon="file-download" className="ml-2" /></MDBBtn>
-          </a>
+          <div className="text-center">
+            <p style={{paddingLeft: "15px"}} className="brown-text mt-3 h4 text-center">Download Application for Enrollment</p>
+            <a href={registration} style={{paddingLeft: "15px"}} download className="text-center">
+              <MDBBtn rounded size="lg" color="info" style={{ marginBottom: "2rem"}}><MDBIcon size="3x" icon="file-download" className="ml-2" /></MDBBtn>
+            </a>
+          </div>
         </div>
       )
     }
